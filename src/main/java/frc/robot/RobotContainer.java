@@ -25,6 +25,8 @@ public class RobotContainer {
     // Configure the button bindings
     configureButtonBindings();
 
+    // main controller - tank drive
+    // use left & right joysticks
     m_romiDrivetrain.setDefaultCommand(new TankDriveCommand(m_romiDrivetrain, () -> controller.getLeftY(), () -> controller.getRightY()));
   }
 

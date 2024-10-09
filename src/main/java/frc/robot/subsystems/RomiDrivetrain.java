@@ -10,11 +10,11 @@ import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants.DriveConstants;
 
 public class RomiDrivetrain extends SubsystemBase {
   private static final double kCountsPerRevolution = 1440.0;
   private static final double kWheelDiameterInch = 2.75591; // 70 mm
-  
 
   // The Romi has the left and right motors set to
   // PWM channels 0 and 1 respectively
@@ -46,7 +46,7 @@ public class RomiDrivetrain extends SubsystemBase {
   }
 
   public void tankDrive(DoubleSupplier left, DoubleSupplier right) {
-    m_diffDrive.tankDrive(left.getAsDouble(), right.getAsDouble());
+    m_diffDrive.tankDrive(left.getAsDouble() * DriveConstants.speedFactor, right.getAsDouble() * DriveConstants.speedFactor);
   }
 
   public void resetEncoders() {
