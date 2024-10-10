@@ -25,7 +25,7 @@ public class RobotContainer {
     // Configure the button bindings
     configureButtonBindings();
 
-    m_romiDrivetrain.setDefaultCommand(new TankDriveCommand(m_romiDrivetrain, () -> controller.getLeftY(), () -> controller.getRightY()));
+    m_romiDrivetrain.setDefaultCommand(new TankDriveCommand(m_romiDrivetrain, () -> -controller.getLeftY(), () -> -controller.getRightY()));
   }
 
   /**
