@@ -15,7 +15,7 @@ package frc.robot;
 public final class Constants {
 
   public final class DriveConstants {
-    public final static double speedFactor = 1;
+    public final static double speedFactor = 0.5;
   }
 
 }
